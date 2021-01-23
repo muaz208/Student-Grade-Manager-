@@ -8,34 +8,9 @@
     
 
 
-   
-    
-//=========Question 1==================================
-	void TestQ1_two_strings(CuTest *tc) {
-		
-		CuAssertStrEquals(tc, "HelloWorld!", my_strcat("Hello","World!"));
-	}
-    
-	void TestQ1_second_empty(CuTest *tc) {
-		
-		CuAssertStrEquals(tc, "Hello", my_strcat("Hello",""));
-	}
-	void TestQ1_first_empty(CuTest *tc) {
-		
-		CuAssertStrEquals(tc, "World!", my_strcat("","World!"));
-	}
-	void TestQ1_Muaz(CuTest *tc) {
-
-		CuAssertStrEquals(tc, "Hello Muaz!", my_strcat("Hello"," Muaz!"));
-	}
-	void TestQ1_Muaz2(CuTest *tc) {
-
-		CuAssertStrEquals(tc, "Hello Muaz How Are You Today?", my_strcat("Hello Muaz How"," Are You Today?"));
-	}
     
 
-//===========================================================
-//=================Question 2================================
+
 	void TestQ2_find_notThere(CuTest *tc) {
 
 		char inputFile[] =  "students.txt";
@@ -303,116 +278,12 @@
 
 
 	}
-
-//===========================================================
-//=================Question 3================================  
-	void TestQ3_readandSort1(CuTest *tc) {
-
-		char inputFile[] =  "wordlist.txt";
-		int size;
-		//create list using the input file
-		char **actualList = read_words(inputFile,&size);
-		sort_words(actualList,size);
-
-		char *expectedList[]={"apple","banana","hello","milan","programming","zebra"};
-		
-		int i;
-		for (i=0;i<size;i++)
-			CuAssertStrEquals(tc, expectedList[i], actualList[i]);
-
-	}
-	void TestQ3_readandSort3(CuTest *tc) {
-
-		char inputFile[] =  "wordlist2.txt";
-		int size;
-		//create list using the input file
-		char **actualList = read_words(inputFile,&size);
-		sort_words(actualList,size);
-
-		char *expectedList[]={"brysontiller","lilbaby","nafesmallz","nav","playboicarti","swaelee"};
-
-		int i;
-		for (i=0;i<size;i++)
-			CuAssertStrEquals(tc, expectedList[i], actualList[i]);
-
-	}
-   
-	void TestQ3_readandSort2(CuTest *tc) {
-
-		char inputFile[] =  "wordlist.txt";
-		int size;
-		//create list using the input file
-		char **actualList = read_words(inputFile,&size);
-		sort2_words(actualList,size);
-
-		char *expectedList[]={"apple","banana","hello","milan","programming","zebra"};
-
-		
-
-		int i;
-		for (i=0;i<size;i++)
-			CuAssertStrEquals(tc, expectedList[i], actualList[i]);
-
-	}
-
-	void TestQ3_readandSort4(CuTest *tc) {
-
-		char inputFile[] =  "wordlist2.txt";
-		int size;
-		//create list using the input file
-		char **actualList = read_words(inputFile,&size);
-		sort2_words(actualList,size);
-
-		char *expectedList[]={"brysontiller","lilbaby","nafesmallz","nav","playboicarti","swaelee"};
-
-		int i;
-		for (i=0;i<size;i++)
-			CuAssertStrEquals(tc, expectedList[i], actualList[i]);
-
-	}
-
-	void TestQ3_readandSortSamePrefix(CuTest *tc) {
-
-		char inputFile[] =  "wordlist3.txt";
-		int size;
-		//create list using the input file
-		char **actualList = read_words(inputFile,&size);
-		sort_words(actualList,size);
-
-		char *expectedList[]={"lilbaby","lildurk","lilkeed","lilmosey","liluzivert","lilwayne"};
-
-		int i;
-		for (i=0;i<size;i++)
-			CuAssertStrEquals(tc, expectedList[i], actualList[i]);
-
-	}
-	void TestQ3_readandSortSamePrefix2(CuTest *tc) {
-
-		char inputFile[] =  "wordlist3.txt";
-		int size;
-		//create list using the input file
-		char **actualList = read_words(inputFile,&size);
-		sort2_words(actualList,size);
-
-		char *expectedList[]={"lilbaby","lildurk","lilkeed","lilmosey","liluzivert","lilwayne"};
-
-		int i;
-		for (i=0;i<size;i++)
-			CuAssertStrEquals(tc, expectedList[i], actualList[i]);
-
-	}
  
 
     
   
 //===========================================================
 	CuSuite* Lab3GetSuite() {
-		CuSuite* suite = CuSuiteNew();
-		SUITE_ADD_TEST(suite, TestQ1_two_strings);
-		SUITE_ADD_TEST(suite, TestQ1_second_empty);
-		SUITE_ADD_TEST(suite, TestQ1_first_empty);
-		SUITE_ADD_TEST(suite, TestQ1_Muaz);
-		SUITE_ADD_TEST(suite, TestQ1_Muaz2);
 
 
 		SUITE_ADD_TEST(suite, TestQ2_find_notThere);
@@ -424,14 +295,6 @@
 		SUITE_ADD_TEST(suite, TestQ2_withdraw2);
 		SUITE_ADD_TEST(suite, TestQ2_withdraw3);
 		SUITE_ADD_TEST(suite, TestQ2_destroy_list);
-
-
-		SUITE_ADD_TEST(suite, TestQ3_readandSort1);
-		SUITE_ADD_TEST(suite, TestQ3_readandSort2);
-		SUITE_ADD_TEST(suite, TestQ3_readandSort3);
-		SUITE_ADD_TEST(suite, TestQ3_readandSort4);
-		SUITE_ADD_TEST(suite, TestQ3_readandSortSamePrefix);
-		SUITE_ADD_TEST(suite, TestQ3_readandSortSamePrefix2);
         
        
 
