@@ -2,7 +2,7 @@
 
 This is a project that I worked on in C which manages the grades of a certain set of students. The program uses a student structure which is defined in the program to store the students information such as Full Name, Student Number, Course grades and their final mark. Dynamic memory allocation is used to allocate memory for an array of pointers of type student so that each pointer will point to a student. Memory is the dynamically allocated once again for each pointer to point to a student object that will hold all the information of each student in the class. The program contains a function that takes a .txt file as an input which contains the information of the students such as their name and student number and reads this file to store the relevant information to the students strutures members (such as a char array for their name and a int variable for their student number). A similar fucntion also exists for obtaining the students marks from a .txt file. 
 
-The structure definition is located in the student.h file and the main program with all the functions in the Student-Grades-Manager.c file
+The structure definition is located in the student.h file, the program function prototypes in Questions.h and the main program with all the functions in the Student-Grades-Manager.c file
 
 Additionally, the program also contains the follwoing functions 
 
